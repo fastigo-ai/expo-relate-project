@@ -34,7 +34,7 @@ function Home() {
       <ContactForm />
     </div>
   
-    <Footer />
+    {/* <Footer /> */}
   </div>
   )
 }

@@ -1,199 +1,144 @@
-import React from 'react';
-import Footer from '../components/Footer';
-import ContactForm from '../components/Comment';
+import React from "react";
 
 const PortfolioUI = () => {
   const portfolioProjects = [
     {
       id: 1,
-      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=600&h=450&fit=crop",
-      title: "DECEUNINCK — FRONTALE 2024",
-      hasAccent: false
+      image: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200",
+      title: "DECEUNINCK",
+      event: "FRONTALE 2024",
+      location: "Germany",
     },
     {
       id: 2,
-      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=450&fit=crop",
-      title: "ALUPROF — BAU 2025",
-      hasAccent: true
+      image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=1200",
+      title: "ALUPROF",
+      event: "BAU 2025",
+      location: "Munich",
     },
     {
       id: 3,
-      image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=450&fit=crop",
-      title: "ANWIS — R+T 2024",
-      hasAccent: false
+      image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=1200",
+      title: "ANWIS",
+      event: "R+T 2024",
+      location: "Stuttgart",
     },
     {
       id: 4,
-      image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&h=450&fit=crop",
-      title: "TEKNOS — EXPO 2024",
-      hasAccent: false
+      image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200",
+      title: "TEKNOS",
+      event: "EXPO 2024",
+      location: "Italy",
     },
     {
       id: 5,
-      image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&h=450&fit=crop",
-      title: "VELUX — BUDMA 2025",
-      hasAccent: false
+      image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=1200",
+      title: "VELUX",
+      event: "BUDMA 2025",
+      location: "Poland",
     },
     {
       id: 6,
-      image: "https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?w=600&h=450&fit=crop",
-      title: "REHAU — LIGHT 2024",
-      hasAccent: false
+      image: "https://images.unsplash.com/photo-1497366858526-0766cadbe8fa?w=1200",
+      title: "REHAU",
+      event: "LIGHT 2024",
+      location: "Frankfurt",
     },
     {
       id: 7,
-      image: "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=600&h=450&fit=crop",
-      title: "FAKRO — FAIR 2024",
-      hasAccent: true
+      image: "https://images.unsplash.com/photo-1551739440-5dd934d3a94a?w=1200",
+      title: "FAKRO",
+      event: "FAIR 2024",
+      location: "Europe",
     },
     {
       id: 8,
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=450&fit=crop",
-      title: "KOMMERLING — TRADE 2025",
-      hasAccent: false
+      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=1200",
+      title: "KOMMERLING",
+      event: "TRADE 2025",
+      location: "Germany",
     },
-    {
-      id: 9,
-      image: "https://images.unsplash.com/photo-1560472355-536de3962603?w=600&h=450&fit=crop",
-      title: "SALAMANDER — SHOW 2024",
-      hasAccent: false
-    },
-    {
-      id: 10,
-      image: "https://images.unsplash.com/photo-1573164713988-8665fc963095?w=600&h=450&fit=crop",
-      title: "ALIPLAST — EXPO 2025",
-      hasAccent: false
-    },
-    {
-      id: 11,
-      image: "https://images.unsplash.com/photo-1562113530-57ba0c8e60b4?w=600&h=450&fit=crop",
-      title: "CORTIZO — MADRID 2024",
-      hasAccent: false
-    },
-    {
-      id: 12,
-      image: "https://images.unsplash.com/photo-1497366412874-3415097a27e7?w=600&h=450&fit=crop",
-      title: "SCHUCO — MESSE 2025",
-      hasAccent: true
-    },
-    {
-      id: 13,
-      image: "https://images.unsplash.com/photo-1545558014-8692077e9b5c?w=600&h=450&fit=crop",
-      title: "KAWNEER — HANNOVER 2024",
-      hasAccent: false
-    },
-    {
-      id: 14,
-      image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&h=450&fit=crop",
-      title: "GUARDIAN — GLASS 2025",
-      hasAccent: false
-    },
-    {
-      id: 15,
-      image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=450&fit=crop",
-      title: "PILKINGTON — TECH 2024",
-      hasAccent: false
-    },
-    {
-      id: 16,
-      image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=600&h=450&fit=crop",
-      title: "TREMCO — BUILD 2025",
-      hasAccent: false
-    },
-    {
-      id: 17,
-      image: "https://images.unsplash.com/photo-1560472355-a9a6ea4a3ffd?w=600&h=450&fit=crop",
-      title: "SOUDAL — WARSAW 2024",
-      hasAccent: true
-    },
-    {
-      id: 18,
-      image: "https://images.unsplash.com/photo-1497215842964-222b430dc094?w=600&h=450&fit=crop",
-      title: "HENKEL — INDUSTRY 2025",
-      hasAccent: false
-    },
-    {
-      id: 19,
-      image: "https://images.unsplash.com/photo-1560472354-36ac5f6e43b5?w=600&h=450&fit=crop",
-      title: "MAPEI — CONSTRUCT 2024",
-      hasAccent: false
-    },
-    {
-      id: 20,
-      image: "https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=600&h=450&fit=crop",
-      title: "TESA — INNOVATION 2025",
-      hasAccent: false
-    },
-    {
-      id: 21,
-      image: "https://images.unsplash.com/photo-1560472355-67d8da34e0ca?w=600&h=450&fit=crop",
-      title: "BONFIX — SUMMIT 2024",
-      hasAccent: false
-    },
-    {
-      id: 22,
-      image: "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&h=450&fit=crop",
-      title: "GEALAN — FUTURE 2025",
-      hasAccent: true
-    }
   ];
 
-  const ProjectCard = ({ project }: { project: any }) => (
-    <div className="group cursor-pointer">
-      <div className="aspect-[4/3] bg-gray-200 rounded-lg overflow-hidden mb-4 relative">
-        <img 
-          src={project.image}
-          alt={project.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-        />
-        {project.hasAccent && (
-          <div className="absolute top-4 right-4 w-12 h-16 bg-purple-500 rounded opacity-80"></div>
-        )}
-      </div>
-      {project.title && (
-        <h3 className="text-lg font-bold text-black">{project.title}</h3>
-      )}
-    </div>
-  );
+  const layout = [
+    "col-span-2 row-span-3",
+    "col-span-1 row-span-2",
+    "col-span-1 row-span-2",
+    "col-span-2 row-span-2",
+    "col-span-1 row-span-2",
+    "col-span-1 row-span-1",
+    "col-span-1 row-span-1",
+    "col-span-2 row-span-2",
+  ];
 
   return (
-    <div className="min-h-screen bg-gray-50 mt-20">
+    <div className="min-h-screen bg-gray-50 mt-20 relative overflow-hidden">
+
       {/* Header */}
       <div className="flex justify-between items-center px-8 py-6">
-        <div className="text-sm font-medium text-gray-600">EXPO</div>
-        <div className="text-sm font-medium text-gray-600">+48 61 642 7147</div>
+        <div className="text-sm font-medium "></div>
+        <div className="text-sm font-medium ">
+         
+        </div>
       </div>
 
-      {/* Main Content */}
-      <div className="max-w-6xl mx-auto px-8">
-        {/* Portfolio Title */}
-        <div className="text-center mb-16">
-          <h1 className="text-8xl font-bold text-black mb-4">portfolio</h1>
-          <p className="text-sm text-gray-600">Smart Design Expo • Portfolio</p>
+      <div className="max-w-7xl mx-auto px-8">
+        {/* Title */}
+        <div className="text-center mb-20">
+          <h1 className="text-6xl md:text-8xl font-black mb-4">portfolio</h1>
+          <p className="text-gray-600 tracking-wide">
+            Smart Design Expo • Selected Projects
+          </p>
         </div>
 
-        {/* Navigation Buttons */}
-        <div className="flex justify-center gap-4 mb-20">
-          <button className="px-8 py-3 border border-gray-300 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors">
-            inspirujące stoiska
-          </button>
-          <button className="px-8 py-3 border border-gray-300 rounded-full text-sm font-medium text-gray-700 hover:bg-gray-100 transition-colors">
-            ty projektujesz my budujemy
-          </button>
-        </div>
+        {/* Masonry Grid */}
+        <div
+          className="
+            grid grid-cols-1 md:grid-cols-4
+            auto-rows-[180px]
+            gap-6
+            mb-32
+          "
+        >
+          {portfolioProjects.map((project, index) => (
+            <div
+              key={project.id}
+              className={`${layout[index % layout.length]} group relative overflow-hidden rounded-xl shadow-lg cursor-pointer`}
+            >
+              {/* Image */}
+              <img
+                src={project.image}
+                alt={project.title}
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+              />
 
-        {/* Section Title */}
-        <h2 className="text-4xl font-bold text-center mb-16">inspirujące stoiska</h2>
-
-        {/* Portfolio Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-16">
-          {portfolioProjects.map((project) => (
-            <ProjectCard key={project.id} project={project} />
+              {/* Overlay */}
+              <div
+                className="
+                  absolute inset-0
+                  bg-gradient-to-t from-black/80 via-black/40 to-transparent
+                  opacity-0 group-hover:opacity-100
+                  transition-opacity duration-500
+                  flex items-end
+                "
+              >
+                <div
+                  className="
+                    p-6 text-white
+                    translate-y-6 group-hover:translate-y-0
+                    transition-transform duration-500
+                  "
+                >
+                  <h3 className="text-xl font-bold">{project.title}</h3>
+                  <p className="text-sm text-gray-200">{project.event}</p>
+                  <p className="text-xs text-gray-300">{project.location}</p>
+                </div>
+              </div>
+            </div>
           ))}
         </div>
       </div>
-      {/* <ContactForm /> */}
-      <Footer />
+
     </div>
   );
 };

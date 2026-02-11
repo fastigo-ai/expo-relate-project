@@ -37,7 +37,7 @@ function ContactUs() {
             <h1 className="text-8xl font-black text-black mb-6 tracking-tight">
               Contact
             </h1>
-            <p className="text-sm text-gray-500 tracking-wide">Smart Design Expo → Contact</p>
+            <p className="text-sm text-gray-500 tracking-wide">Nakashi EXPO INNOVATION → Contact</p>
           </div>
         </div>
       </div>
@@ -56,7 +56,7 @@ function ContactUs() {
                     <MapPin className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg text-black mb-2">Smart Design Expo</h3>
+                    <h3 className="font-bold text-lg text-black mb-2">Nakashi EXPO INNOVATION</h3>
                     <p className="text-gray-600 text-sm leading-relaxed">
                       Szparagowa 12, 62-081 Wysogotowo<br />
                       Poland
@@ -69,7 +69,7 @@ function ContactUs() {
                     <Phone className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-black">+48 61 642 7147</p>
+                    <p className="font-semibold text-black">0120 4382524</p>
                   </div>
                 </div>
 
@@ -78,7 +78,7 @@ function ContactUs() {
                     <Mail className="w-5 h-5 text-white" />
                   </div>
                   <div>
-                    <p className="font-semibold text-black">hello@smartdesignexpo.com</p>
+                    <p className="font-semibold text-black">info@nakashi.co</p>
                   </div>
                 </div>
 
@@ -131,7 +131,7 @@ function ContactUs() {
                 <div className="flex items-center space-x-3">
                   <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
                   <div>
-                    <p className="font-semibold text-sm text-black">Smart Design Expo</p>
+                    <p className="font-semibold text-sm text-black">Nakashi EXPO INNOVATION</p>
                     <p className="text-xs text-gray-600">Projektowanie i...</p>
                   </div>
                 </div>
@@ -163,8 +163,8 @@ function ContactUs() {
               </div>
               <h3 className="font-bold text-lg text-black mb-2">Email Us</h3>
               <p className="text-gray-600 text-sm mb-4">Drop us a line anytime</p>
-              <a href="mailto:hello@smartdesignexpo.com" className="text-black font-semibold hover:text-gray-700 transition-colors">
-                hello@smartdesignexpo.com
+              <a href="mailto:info@nakashi.co" className="text-black font-semibold hover:text-gray-700 transition-colors">
+                info@nakashi.co
               </a>
             </div>
 
@@ -175,7 +175,7 @@ function ContactUs() {
               <h3 className="font-bold text-lg text-black mb-2">Call Us</h3>
               <p className="text-gray-600 text-sm mb-4">Speak directly with our team</p>
               <a href="tel:+48616427147" className="text-black font-semibold hover:text-gray-700 transition-colors">
-                +48 61 642 7147
+                0120 4382524
               </a>
             </div>
 
@@ -224,7 +224,7 @@ function ContactUs() {
         </div>
       </div>
       <ContactForm />
-      <Footer />
+      
     </div>
   );
 }

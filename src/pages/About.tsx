@@ -3,8 +3,8 @@ import OurMissionSection from '../components/OurMission'
 
 export const About = () => {
   return (
-    <>
-    <OurMissionSection />s
-    </>
+    <div className='mt-10'>
+    <OurMissionSection />
+   </div>
   )
 }

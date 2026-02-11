@@ -3,6 +3,8 @@ import { Menu, X, Mail, Phone, Instagram, Facebook, Linkedin } from 'lucide-reac
 import FullScreenMenu from './FullScreenMenu';
 import { HiOutlineMenuAlt2 } from "react-icons/hi";
 import logo from '../assets/logo.png';
+import { Link } from "react-router-dom";
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -55,22 +57,27 @@ const Header = () => {
         <div className="max-w-7xl md:max-w-8xl lg:max-w-9xl mx-auto px-3 sm:px-4 lg:px-6 py-2 sm:py-3 lg:py-4">
           <div className="flex items-center justify-between">
             {/* Logo - Responsive sizing */}
-            <div className="flex gap-2 sm:gap-3 lg:gap-4 items-center flex-shrink-0">
-              <img 
-                src={logo} 
-                alt="Nakashi Expo Innovation Logo" 
-                className="h-12 w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20 object-contain"
-              />
-              <div className={`${isDarkBackground ? 'text-white' : 'text-black'} leading-tight`}>
-                <div className="text-xs sm:text-sm lg:text-sm font-light tracking-[0.15em] sm:tracking-[0.2em] uppercase">
-                  <div>Nakashi</div>
-                  <div className="hidden sm:block">EXPO</div>
-                  <div className="hidden sm:block">INNOVATION</div>
-                  {/* Mobile: Show compact version */}
-                  <div className="sm:hidden text-[10px]">EXPO</div>
-                </div>
-              </div>
-            </div>
+           <Link to="/" className="flex-shrink-0">
+  <div className="flex gap-2 sm:gap-3 lg:gap-4 items-center cursor-pointer">
+    
+    <div className={`${isDarkBackground ? 'text-white' : 'text-black'} leading-tight`}>
+      <div className="text-xs sm:text-sm lg:text-sm font-light tracking-[0.15em] sm:tracking-[0.2em] uppercase">
+        <div>Nakashi</div>
+        <div className="hidden sm:block">EXPO</div>
+        <div className="hidden sm:block">INNOVATION</div>
+        <div className="sm:hidden text-[10px]">EXPO</div>
+      </div>
+    </div>
+
+    <img 
+      src={logo} 
+      alt="Nakashi Expo Innovation Logo" 
+      className="h-12 w-12 sm:h-16 sm:w-16 lg:h-20 lg:w-20 object-contain"
+    />
+    
+  </div>
+</Link>
+
 
             {/* Desktop Navigation - Hidden on mobile/tablet */}
             <div className="hidden xl:flex items-center space-x-6 2xl:space-x-8">
@@ -87,7 +94,7 @@ const Header = () => {
               </button>
               
               {/* Language Selector */}
-              <div className={`flex items-center space-x-4 lg:space-x-6 text-sm lg:text-lg ${
+              {/* <div className={`flex items-center space-x-4 lg:space-x-6 text-sm lg:text-lg ${
                 isDarkBackground ? 'text-white' : 'text-black'
               }`}>
                 <span className={`cursor-pointer transition-all duration-200 hover:scale-110 ${
@@ -102,7 +109,7 @@ const Header = () => {
                 <span className={`cursor-pointer transition-all duration-200 hover:scale-110 ${
                   isDarkBackground ? 'hover:text-gray-300' : 'hover:text-gray-600'
                 }`}>KO</span>
-              </div>
+              </div> */}
 
               {/* Contact Info */}
               <div className="flex items-center space-x-4 lg:space-x-6">
@@ -110,20 +117,20 @@ const Header = () => {
                   isDarkBackground ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-600'
                 }`}>
                   <Mail className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2 flex-shrink-0" />
-                  <span className="hidden 2xl:block">office@smartdesign-expo.com</span>
+                  <span className="hidden 2xl:block">info@nakashi.co</span>
                   <span className="xl:block 2xl:hidden">office@...</span>
                 </div>
                 <div className={`flex items-center text-xs lg:text-sm transition-colors hover:scale-105 duration-200 ${
                   isDarkBackground ? 'text-white hover:text-gray-300' : 'text-black hover:text-gray-600'
                 }`}>
                   <Phone className="w-3 h-3 lg:w-4 lg:h-4 mr-1 lg:mr-2 flex-shrink-0" />
-                  <span>+48 61 642 7147</span>
+                  <span>0120 4382524</span>
                 </div>
               </div>
             </div>
 
             {/* Tablet Navigation - Visible on medium screens only */}
-            <div className="hidden lg:flex xl:hidden items-center space-x-4">
+            {/* <div className="hidden lg:flex xl:hidden items-center space-x-4">
               <div className={`flex items-center space-x-3 text-sm ${
                 isDarkBackground ? 'text-white' : 'text-black'
               }`}>
@@ -146,7 +153,7 @@ const Header = () => {
                 <span className="text-base tracking-wide font-medium">MENU</span>
                 <HiOutlineMenuAlt2 className="w-6 h-6" />
               </button>
-            </div>
+            </div> */}
 
             {/* Mobile Menu Button & Contact Toggle */}
             <div className="flex items-center space-x-2 lg:hidden">
@@ -182,7 +189,7 @@ const Header = () => {
         </div>
 
         {/* Mobile Contact Info Dropdown */}
-        {showMobileContact && (
+        {/* {showMobileContact && (
           <div className={`lg:hidden border-t transition-all duration-300 ${
             isDarkBackground 
               ? 'bg-black/95 backdrop-blur-sm border-white/10' 
@@ -194,7 +201,7 @@ const Header = () => {
               }`}>
                 <Mail className="w-4 h-4 mr-3 flex-shrink-0" />
                 <a href="mailto:office@smartdesign-expo.com" className="hover:underline break-all">
-                  office@smartdesign-expo.com
+                  
                 </a>
               </div>
               <div className={`flex items-center text-sm ${
@@ -207,7 +214,7 @@ const Header = () => {
               </div>
             </div>
           </div>
-        )}
+        )} */}
 
         {/* Mobile/Tablet Menu */}
         {isMenuOpen && (

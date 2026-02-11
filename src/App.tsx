@@ -6,7 +6,9 @@ import Team from './pages/Team';
 import Header from './components/Header';
 import ContactUs from './pages/Contact-us';
 import {About} from './pages/About';
-
+import AboutSectionDetail from './components/AboutSectionDetail';
+import ServiceDetail from './pages/ServiceDetail';
+import QuickQuery from './components/QuickQuery';
 
 function App() {
   return (
@@ -18,9 +20,11 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/portfolio" element={<Portfolio />} />
           <Route path="/exhibitions-portfolio" element={<ExhibitionsPortfolio />} />
-          <Route path="/team" element={<Team />} />
+          <Route path="/quick-query" element={<QuickQuery />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          
+           <Route path="/projects/:id" element={<AboutSectionDetail />} />
+          <Route path="/services/:id" element={<ServiceDetail />} />
+
      
         </Routes>
       </div>
