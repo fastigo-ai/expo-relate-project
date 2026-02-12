@@ -1,8 +1,4 @@
 import React, { useState, useEffect } from "react";
-import image from "../assets/1.png";
-import image2 from "../assets/2.png";
-import image3 from "../assets/3.png";
-import image4 from "../assets/4.png";
 
 const shuffleArray = (array) => {
   const shuffled = [...array];
@@ -20,39 +16,75 @@ const PortfolioSection = () => {
   const portfolioData = [
     {
       id: 1,
-      title: "Wiśniowski",
-      type: "fair stand",
-      location: "Munich",
-      event: "BAU 2023",
-      area: "527 m²",
-      image,
+      title: "AMRIT POLYCHEM",
+      type: "Exhibition Booth",
+      location: "Greater Noida",
+      event: "PUTECH 2025",
+      bootSize: 78,
+      image: "https://res.cloudinary.com/dhfpgijhp/image/upload/v1770884428/Screenshot_2026-01-21_141136_ezcsrv.png",
     },
     {
       id: 2,
-      title: "ModernTech",
-      type: "exhibition booth",
-      location: "Berlin",
-      event: "IFA 2023",
-      area: "320 m²",
-      image: image2,
+      title: "BAMS",
+      type: "Exhibition Booth",
+      location: "Greater Noida",
+      event: "PUTECH 2025",
+      bootSize: 72,
+      image: "https://res.cloudinary.com/dhfpgijhp/image/upload/v1770884553/Screenshot_2026-01-21_141737_obori1.png",
     },
     {
       id: 3,
-      title: "InnovateSpace",
-      type: "trade show stand",
-      location: "Frankfurt",
-      event: "Light + Building 2024",
-      area: "650 m²",
-      image: image3,
+      title: "BAMS",
+      type: "Exhibition Booth",
+      location: "New Delhi",
+      event: "CABLE AND WIRE FAIR 2025",
+      bootSize: 40,
+      image: "https://res.cloudinary.com/dhfpgijhp/image/upload/v1770884689/Screenshot_2026-01-21_143151_gb5qrv.png",
     },
     {
       id: 4,
-      title: "FutureDesign",
-      type: "pavilion",
-      location: "Milan",
-      event: "Salone del Mobile 2024",
-      area: "890 m²",
-      image: image4,
+      title: "BHARAT ENTERPRISES",
+      type: "Exhibition Booth",
+      location: "New Delhi",
+      event: "IIFF 2023",
+      bootSize: 36,
+      image: "https://res.cloudinary.com/dhfpgijhp/image/upload/v1770884881/Screenshot_2026-01-21_152031_wgozy3.png",
+    },
+    {
+      id: 5,
+      title: "DANFOSS",
+      type: "Exhibition Booth",
+      location: "Bengaluru",
+      event: "ACREX 2025",
+      bootSize: 117,
+      image: "https://res.cloudinary.com/dhfpgijhp/image/upload/v1770884881/Screenshot_2026-01-21_152031_wgozy3.png",
+    },
+    {
+      id: 6,
+      title: "DENSO",
+      type: "Exhibition Booth",
+      location: "New Delhi",
+      event: "BHARAT MOBILITY 2025",
+      bootSize: 120,
+      image: "https://res.cloudinary.com/dhfpgijhp/image/upload/v1770885024/Screenshot_2026-01-21_153755_exthcy.png",
+    },
+    {
+      id: 7,
+      title: "GENUS",
+      type: "Exhibition Booth",
+      location: "Greater Noida",
+      event: "ELECRAMA 2025",
+      bootSize: 90,
+      image: "https://res.cloudinary.com/dhfpgijhp/image/upload/v1770885256/Screenshot_2026-01-21_160149_cykwte.png",
+    },
+    {
+      id: 8,
+      title: "SPACE WORLD",
+      type: "Exhibition Booth",
+      location: "New Delhi",
+      event: "IMC 2025",
+      bootSize: 233,
+      image: "https://res.cloudinary.com/dhfpgijhp/image/upload/v1770892352/Screenshot_2026-01-21_184010_ldpecy.png",
     },
   ];
 
@@ -75,7 +107,9 @@ const PortfolioSection = () => {
     <section className="bg-gray-100 py-12 sm:py-16 px-4 sm:px-8 md:px-12">
       {/* Header */}
       <div className="text-center mb-10 sm:mb-14">
-        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold">Portfolio</h1>
+        <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold">
+          Portfolio
+        </h1>
         <p className="tracking-widest text-xs sm:text-sm mt-2">
           30 YEARS OF EXPERIENCE
         </p>
@@ -83,27 +117,39 @@ const PortfolioSection = () => {
 
       {/* Main Card */}
       <div className="relative bg-white shadow-2xl rounded-xl overflow-hidden grid grid-cols-1 md:grid-cols-12">
-
+        
         {/* Info Panel */}
         <div className="md:col-span-4 bg-black text-white p-6 sm:p-8 md:p-10 flex flex-col justify-center">
           <h2 className="text-2xl sm:text-3xl md:text-4xl mb-4">
             {currentItem.title}
           </h2>
+
           <p className="uppercase tracking-wider text-xs mb-1">
             {currentItem.type}
           </p>
+
           <p className="text-sm">{currentItem.location}</p>
           <p className="text-sm mb-4">{currentItem.event}</p>
+
           <p className="inline-block bg-white/10 px-4 py-2 text-base sm:text-lg font-bold">
-            {currentItem.area}
+            Boot Size : {currentItem.bootSize} 
           </p>
         </div>
 
         {/* Image */}
         <div className="md:col-span-8 relative">
           <img
-            src={currentItem.image}
-            alt={currentItem.title}
+            src={
+              currentItem.image && currentItem.image.trim() !== ""
+                ? currentItem.image
+                : "https://via.placeholder.com/800x500?text=Expo+Project"
+            }
+            alt={currentItem.title || "Expo Project"}
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src =
+                "https://via.placeholder.com/800x500?text=Expo+Project";
+            }}
             className="w-full object-cover
               h-[240px]
               sm:h-[320px]
@@ -111,10 +157,12 @@ const PortfolioSection = () => {
               lg:h-[520px]"
           />
 
-          {/* Arrows */}
+          {/* Left Arrow */}
           <button
             onClick={() =>
-              setCurrentSlide((currentSlide - 1 + totalSlides) % totalSlides)
+              setCurrentSlide(
+                (currentSlide - 1 + totalSlides) % totalSlides
+              )
             }
             className="absolute left-2 sm:left-4 top-1/2 -translate-y-1/2
               bg-white/80 px-3 py-2 sm:px-4 sm:py-3
@@ -123,8 +171,11 @@ const PortfolioSection = () => {
             ←
           </button>
 
+          {/* Right Arrow */}
           <button
-            onClick={() => setCurrentSlide((currentSlide + 1) % totalSlides)}
+            onClick={() =>
+              setCurrentSlide((currentSlide + 1) % totalSlides)
+            }
             className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2
               bg-white/80 px-3 py-2 sm:px-4 sm:py-3
               hover:bg-[#862422] hover:text-white transition"
