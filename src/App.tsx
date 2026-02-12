@@ -9,11 +9,13 @@ import {About} from './pages/About';
 import AboutSectionDetail from './components/AboutSectionDetail';
 import ServiceDetail from './pages/ServiceDetail';
 import QuickQuery from './components/QuickQuery';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen bg-gray-100">
+        <ScrollToTop/>
         <Header />
         <Routes>
           <Route path="/" element={<Home />} />
