@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { SplitText } from "./SplitText";
 
 const QuickQuery = () => {
   const [form, setForm] = useState({
@@ -29,7 +30,7 @@ const QuickQuery = () => {
         {/* Header */}
         <div className="text-center mb-20">
           <h1 className="text-6xl md:text-8xl font-black mb-4">
-            Quick Query
+            <SplitText text="Quick Query" />
           </h1>
           <p className="text-gray-600 tracking-wide max-w-xl mx-auto">
             Tell us about your exhibition or event.  

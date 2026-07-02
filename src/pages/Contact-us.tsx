@@ -1,6 +1,7 @@
 import React from 'react';
 import { Phone, MapPin, Clock, Star, Mail } from 'lucide-react';
 import ContactForm from '../components/Comment';
+import { SplitText } from '../components/SplitText';
 
 function ContactUs() {
   return (
@@ -13,7 +14,7 @@ function ContactUs() {
           {/* Main header */}
           <div className="py-16 text-center">
             <h1 className="text-8xl font-black text-black mb-6 tracking-tight">
-              Contact
+              <SplitText text="Contact" />
             </h1>
             <p className="text-sm text-gray-500 tracking-wide">Nakashi EXPO INNOVATION → Contact</p>
           </div>

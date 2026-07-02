@@ -1,4 +1,5 @@
 import React from "react";
+import { SplitText } from "../components/SplitText";
 
 const ExhibitionPortfolioUI = () => {
   
@@ -289,7 +290,7 @@ const ExhibitionPortfolioUI = () => {
         {/* Title */}
         <div className="text-center mb-20">
           <h1 className="text-6xl md:text-8xl font-black mb-4">
-            exhibitions
+            <SplitText text="exhibitions" />
           </h1>
           <p className="text-gray-600 tracking-wide">
             Smart Design Expo • Exhibition Portfolio
