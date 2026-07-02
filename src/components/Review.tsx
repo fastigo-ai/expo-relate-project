@@ -1,5 +1,39 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { SplitText } from "./SplitText";
+
+const testimonials = [
+  {
+    industry: "SANITARY INDUSTRY",
+    quote:
+      "We had the opportunity to cooperate with Smart Design Expo for the 3rd time when exhibiting at the international KBIS fair taking place in the USA. During each trade fair event, we can be sure that we will receive a high-quality trade fair stand. We can count on support, commitment and interesting ideas from experienced Smart Design Expo employees.",
+    author: "MARTYNA MAKA",
+    position: "Marmite, Trade Marketing and Communication Manager",
+  },
+  {
+    industry: "TECHNOLOGY SECTOR",
+    quote:
+      "Smart Design Expo exceeded our expectations with their innovative approach to our booth design. Their attention to detail and professional execution made our presence at the trade show truly memorable. The team's creativity and technical expertise are unmatched.",
+    author: "ANNA KOWALSKA",
+    position: "Tech Solutions, Marketing Director",
+  },
+  {
+    industry: "AUTOMOTIVE INDUSTRY",
+    quote:
+      "Working with Smart Design Expo was a game-changer for our brand presence at international fairs. Their comprehensive approach from design to implementation saved us time and delivered exceptional results that attracted visitors and generated leads.",
+    author: "ROBERT NOWAK",
+    position: "AutoPro, Exhibition Manager",
+  },
+];
+
+const brands = [
+  { name: "Alprof", logo: "ALPROF" },
+  { name: "Marmite", logo: "marmite" },
+  { name: "Solaris", logo: "SOLARIS" },
+  { name: "Anwis", logo: "anwis" },
+  { name: "HM", logo: "HM" },
+  { name: "Cersanit", logo: "cersanit" },
+];
 
 const TestimonialsSection = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
@@ -7,43 +41,10 @@ const TestimonialsSection = () => {
   const [testimonialsVisible, setTestimonialsVisible] = useState(false);
   const [brandsVisible, setBrandsVisible] = useState(false);
 
-  const sectionRef = useRef(null);
-  const headerRef = useRef(null);
-  const testimonialsRef = useRef(null);
-  const brandsRef = useRef(null);
-
-  const testimonials = [
-    {
-      industry: "SANITARY INDUSTRY",
-      quote:
-        "We had the opportunity to cooperate with Smart Design Expo for the 3rd time when exhibiting at the international KBIS fair taking place in the USA. During each trade fair event, we can be sure that we will receive a high-quality trade fair stand. We can count on support, commitment and interesting ideas from experienced Smart Design Expo employees.",
-      author: "MARTYNA MAKA",
-      position: "Marmite, Trade Marketing and Communication Manager",
-    },
-    {
-      industry: "TECHNOLOGY SECTOR",
-      quote:
-        "Smart Design Expo exceeded our expectations with their innovative approach to our booth design. Their attention to detail and professional execution made our presence at the trade show truly memorable. The team's creativity and technical expertise are unmatched.",
-      author: "ANNA KOWALSKA",
-      position: "Tech Solutions, Marketing Director",
-    },
-    {
-      industry: "AUTOMOTIVE INDUSTRY",
-      quote:
-        "Working with Smart Design Expo was a game-changer for our brand presence at international fairs. Their comprehensive approach from design to implementation saved us time and delivered exceptional results that attracted visitors and generated leads.",
-      author: "ROBERT NOWAK",
-      position: "AutoPro, Exhibition Manager",
-    },
-  ];
-
-  const brands = [
-    { name: "Alprof", logo: "ALPROF" },
-    { name: "Marmite", logo: "marmite" },
-    { name: "Solaris", logo: "SOLARIS" },
-    { name: "Anwis", logo: "anwis" },
-    { name: "HM", logo: "HM" },
-    { name: "Cersanit", logo: "cersanit" },
-  ];
+  const sectionRef = React.useRef(null);
+  const headerRef = React.useRef(null);
+  const testimonialsRef = React.useRef(null);
+  const brandsRef = React.useRef(null);
 
   useEffect(() => {
     const observerOptions = { threshold: 0.2 };
@@ -74,13 +75,15 @@ const TestimonialsSection = () => {
     setCurrentTestimonial((p) => (p - 1 + testimonials.length) % testimonials.length);
 
   return (
-    <section className="py-32 relative overflow-hidden" ref={sectionRef}>
+    <section className="py-24 relative overflow-hidden" ref={sectionRef}>
       <div className="max-w-6xl mx-auto px-6 relative">
 
         {/* Header */}
         <div ref={headerRef} className={`text-center mb-20 transition-all ${headerVisible ? "opacity-100" : "opacity-0 translate-y-8"}`}>
           <h2 className="text-5xl md:text-7xl lg:text-8xl font-black text-black">
-            They trusted us
+            <span className="block text-black overflow-hidden py-2">
+              <SplitText text="They trusted us" />
+            </span>
           </h2>
         </div>
 

@@ -1,4 +1,7 @@
-import React from "react";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { X, ExternalLink, Calendar, MapPin, Layers } from "lucide-react";
+import { SplitText } from "../components/SplitText";
 
 const PortfolioUI = () => {
   const portfolioProjects = [
@@ -272,20 +275,23 @@ const PortfolioUI = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 mt-20 relative overflow-hidden">
+    <div className="min-h-screen bg-gray-50 pt-32 pb-20 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-8">
         <div className="text-center mb-20">
-          <h1 className="text-6xl md:text-8xl font-black mb-4">portfolio</h1>
-          <p className="text-gray-600 tracking-wide">
+          <h1 className="text-6xl md:text-8xl font-black mb-4 overflow-hidden py-2 uppercase">
+            <SplitText text="portfolio" className="text-black" />
+          </h1>
+          <p className="text-gray-600 tracking-wide uppercase font-semibold">
             Smart Design Expo • Selected Projects
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-4 auto-rows-[180px] gap-6 mb-32">
           {portfolioProjects.map((project, index) => (
-            <div
+            <Link
+              to={`/projects/0`}
               key={project.id}
-              className={`${layout[index % layout.length]} group relative overflow-hidden rounded-xl shadow-lg cursor-pointer`}
+              className={`${layout[index % layout.length]} group relative overflow-hidden rounded-xl shadow-lg cursor-pointer block`}
             >
               <img
                 src={project.image}
@@ -300,7 +306,7 @@ const PortfolioUI = () => {
                   <p className="text-xs text-gray-300">{project.location}</p>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import services from "../data/services";
+import { SplitText } from "./SplitText";
 
 const ServiceCard = ({ service, index, onClick }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -124,9 +125,9 @@ const OfertaSection = () => {
   }, []);
 
   return (
-    <section className="py-32 relative overflow-hidden">
+    <section className="py-18 relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 relative">
-        {/* Header */}
+        {/* Header */}  
         <div
           ref={headerRef}
           className={`text-center mb-20 transition-all duration-1000 ${
@@ -134,7 +135,9 @@ const OfertaSection = () => {
           }`}
         >
           <h2 className="text-6xl md:text-8xl lg:text-9xl font-black mb-12">
-            Oferta
+            <span className="block text-black overflow-hidden py-2">
+              <SplitText text="Oferta" />
+            </span>
           </h2>
 
           <div

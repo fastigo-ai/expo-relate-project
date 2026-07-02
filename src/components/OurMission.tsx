@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { SplitText } from "./SplitText";
 
 const OurVisionSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -59,7 +60,7 @@ const OurVisionSection = () => {
           </span>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black mt-4 leading-tight">
-            designing brilliance
+            <SplitText text="designing brilliance" />
           </h1>
 
           <p className="text-lg md:text-xl text-gray-600 mt-4 max-w-3xl mx-auto">

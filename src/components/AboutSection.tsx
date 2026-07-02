@@ -1,5 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
+import { AnimatedCharacters } from "./AnimatedCharacters";
+import { SplitText } from "./SplitText";
 
 const MinimalCard = ({ card, index, isActive, onClick }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -130,8 +132,12 @@ const CardShowcase = () => {
 
             <div className="max-w-4xl mx-auto">
               <h1 className="text-6xl md:text-8xl font-black leading-[0.9] mb-8">
-                <span className="block text-black">That's what they talk about...</span>
-                <span className="block text-black italic">about...</span>
+                <span className="block text-black overflow-hidden py-2">
+                  <SplitText text="That's what they talk about..." />
+                </span>
+                {/* <span className="block text-black italic overflow-hidden py-2">
+                  <SplitText text="about..." />
+                </span> */}
               </h1>
               
               <p className="text-xl text-gray-600 max-w-2xl mx-auto leading-relaxed">

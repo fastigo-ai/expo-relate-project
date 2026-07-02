@@ -1,30 +1,8 @@
-import React, { useState } from 'react';
-import { Phone, Instagram, Facebook, Linkedin, Mail, MapPin, Clock, Star } from 'lucide-react';
+import React from 'react';
+import { Phone, MapPin, Clock, Star, Mail } from 'lucide-react';
 import ContactForm from '../components/Comment';
-import Footer from '../components/Footer';
 
 function ContactUs() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
-  });
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Handle form submission here
-  };
-
   return (
     <div className="min-h-screen mt-20 bg-white">
       {/* Header */}

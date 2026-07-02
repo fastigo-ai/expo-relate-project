@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ChevronDown, Phone, Instagram, Facebook, Linkedin, Users, Filter } from 'lucide-react';
+import { ChevronDown, Users, Filter } from 'lucide-react';
 import Footer from '../components/Footer';
 import ContactForm from '../components/Comment';
 

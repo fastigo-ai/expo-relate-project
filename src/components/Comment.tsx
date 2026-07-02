@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import pdf from "/public/stand-portfolio.pdf";
+import { SplitText } from "./SplitText";
 
 interface FormData {
   name: string;
@@ -49,7 +50,7 @@ const ContactForm: React.FC = () => {
         <div className="max-w-6xl mx-auto px-5">
           <div className="text-center mb-16">
             <h1 className="text-8xl md:text-9xl lg:text-10xl font-black mb-5">
-              Contact
+              <SplitText text="Contact" />
             </h1>
           </div>
 

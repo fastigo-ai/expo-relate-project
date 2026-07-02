@@ -24,8 +24,9 @@ function App() {
           <Route path="/exhibitions-portfolio" element={<ExhibitionsPortfolio />} />
           <Route path="/quick-query" element={<QuickQuery />} />
           <Route path="/contact-us" element={<ContactUs />} />
-           <Route path="/projects/:id" element={<AboutSectionDetail />} />
+          <Route path="/projects/:id" element={<AboutSectionDetail />} />
           <Route path="/services/:id" element={<ServiceDetail />} />
+          <Route path="/team" element={<Team />} />
 
      
         </Routes>

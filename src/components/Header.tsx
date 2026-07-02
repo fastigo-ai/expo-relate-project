@@ -8,7 +8,6 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isScrolled, setIsScrolled] = useState(false);
   const [isDarkBackground, setIsDarkBackground] = useState(true);
   const [showMobileContact, setShowMobileContact] = useState(false);
 
@@ -16,8 +15,6 @@ const Header = () => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
-      
-      setIsScrolled(scrollPosition > 50);
       
       // Determine background color based on scroll position
       if (scrollPosition < windowHeight * 0.8) {

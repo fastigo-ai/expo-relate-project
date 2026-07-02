@@ -1,6 +1,4 @@
 import React from "react";
-import ContactForm from "../components/Comment";
-import Footer from "../components/Footer";
 
 const ExhibitionPortfolioUI = () => {
   
